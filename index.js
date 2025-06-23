@@ -7,7 +7,11 @@ const app = express();
 const cors = require("cors");
 
 // Middleware
-app.use(cors());
+app.use(cors(
+  {
+    origin: process.env.CORS_ORIGIN
+  }
+));
 
 // Root endpoint
 app.get("/", (req, res, next) => {
